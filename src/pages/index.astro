@@ -47,7 +47,7 @@ import LogoName from "../assets/logo-name.svg"
 			/>
     </header>
 
-	<main class="relative z-10">
+	<main id="main-content" class="relative z-10">
 		<section class="h-screen flex items-center justify-center">
 			<h1 class="text-6xl">Section 1</h1>
 		</section>
@@ -100,5 +100,5 @@ import LogoName from "../assets/logo-name.svg"
         duration: 0.2,
       },
       0.4
-    )
+    ).to('main-content', {opacity: 1})
 </script>
