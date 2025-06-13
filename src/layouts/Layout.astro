@@ -1,7 +1,3 @@
----
- import './src/styles/global.css' 
----
-
 <!doctype html>
 <html lang="en">
 	<head>
@@ -16,7 +12,8 @@
 	</body>
 </html>
 
-<style>
+<style is:global>
+	@import "tailwindcss";
 	html,
 	body {
 		margin: 0;
