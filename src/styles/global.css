@@ -113,8 +113,9 @@ nav {
     left: 0;
     right: 0;
     z-index: 2;
-    perspective: 200px;
+    perspective: 500px;
     overflow: hidden;
+    padding: 8px;
 }
 
 .image-container img {
