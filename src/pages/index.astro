@@ -5,99 +5,70 @@ import ImgBackground from "../assets/hero-img-bg.webp"
 import Logo from "../assets/logo-icon.svg"
 import ShortName from "../assets/short-name.svg"
 import MenuIcon from "../assets/menu_icon.svg"
-import LogoName from "../assets/logo-name.svg"
+import LogoName from "../assets/logo-mask-test.svg"
+import About from '../components/About.astro';
 
 ---
 
 <Layout>
-  <div id="logo-mask" class="fixed top-0 w-full h-screen">
-    <section>
-      <picture
-        id="hero-key"
-        class="h-screen scale-125 block overflow-hidden fixed"
-      >
-        <img
-          id="hero-key-logo"
-          src={LogoName.src}
-          class="absolute w-full h-full object-cover"
-        />
-        <img
-          id="hero-key-background"
-          src={ImgBackground.src}
-          class="w-full h-full object-cover"
-        />
-      </picture>
-    </section>
-  </div>
+  <div class="wrapper">
+            <div class="content">
+                <section class="section hero">
+                    <div class="title">
+                        
+                    </div>
+                </section>
+                
+                
+            </div>
 
-  <div
-    class="fixed flex flex-col items-center justify-between h-screen px-20 py-16 w-full"
-  >
-    <header class="flex justify-between w-full">
-		<div class="flex gap-1">
-			<Logo
-			  class="size-11 text-white hover:text-yellow-100 transition-colors duration-500 cursor-pointer"
-			/>
-			<ShortName
-			  class="size-11 text-white hover:text-yellow-100 transition-colors duration-500 cursor-pointer"
-			/>
-		</div>
-		<MenuIcon
-			  class="size-11 text-white hover:text-yellow-100 transition-colors duration-500 cursor-pointer"
-			/>
-    </header>
-	<main id="main-content" class="relative opacity-0">
-		<section class="h-screen flex items-center justify-center">
-			<h1 class="text-6xl">Section 1</h1>
-		</section>
-		<section class="h-screen flex items-center justify-center bg-gray-200">
-			<h1 class="text-6xl">Section 2</h1>
-		</section>
-		<section class="h-screen flex items-center justify-center bg-gray-400">
-			<h1 class="text-6xl">Section 3</h1>
-		</section>
-	</main>
-  </div>
+            <div class="image-container">
+                <img src={LogoName.src} />
+            </div>
+        </div>
+
 </Layout>
 
-<style>
-  #logo-mask {
-    background: white;
-    mask-image: url("/logo-mask.svg");
-    mask-position: center 25%;
-    mask-repeat: no-repeat;
-    mask-size: clamp(50000vh, 35000%, 0vh);
-  }
+<style is:global>
+  @import "tailwindcss";
+  @import "../styles/global.css";
 </style>
+
 
 <script>
   import { gsap } from "gsap"
+
   import { ScrollTrigger } from "gsap/ScrollTrigger"
 
   gsap.registerPlugin(ScrollTrigger)
 
-  const tl = gsap.timeline({
-    ease: "power2.out",
-    scrollTrigger: {
-      scrub: 1,
-    },
-  })
+  window.addEventListener("load", () => {
+      gsap.timeline({
+          scrollTrigger: {
+              trigger: ".wrapper",
+              start: "top top",
+              end: "+=100%",
+              pin: true,
+              scrub: true,
+              markers: false,
+          },
+      })
 
-  tl.to("#hero-key", { duration: 1, scale: 1 })
-    .to("#hero-key-logo", { opacity: 0 }, "<")
-    .to(
-      "#logo-mask",
-      {
-        maskSize: "clamp(20vh, 25%, 30vh)",
-      },
-      0.15
-    )
-    .to(
-      "#hero-key",
-      {
-        opacity: 0,
-        duration: 0.2,
-      },
-      0.4
-    ).to('#main-content', { opacity: 1 })
+          .to("img", {
+              scale: 2,
+              z: 350,
+              clipPath: "inset(10%)",
+              transformOrigin: "center center",
+              ease: "Power1.inOut",
+          })
+          .to(
+              ".section.hero",
+              {
+                  scale: 1,
+                  transformOrigin: "center center",
+                  ease: "Power1.inOut",
+              },
+              "<"
+          )
+  })
 </script>
