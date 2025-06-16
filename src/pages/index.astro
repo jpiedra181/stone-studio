@@ -8,12 +8,13 @@ import MenuIcon from "../assets/menu_icon.svg"
 import LogoName from "../assets/logo-mask-test.svg"
 import About from '../components/About.astro';
 import NavBar from '../components/Nav.astro';
+import Hero from '../components/Hero.astro';
 
 ---
 
 <Layout>
   <div class="wrapper">
-    
+    <Hero />
     <About />
       <div class="image-container">
           <img id="img-anime" src={LogoName.src} />
