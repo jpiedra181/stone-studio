@@ -7,14 +7,16 @@ import ShortName from "../assets/short-name.svg"
 import MenuIcon from "../assets/menu_icon.svg"
 import LogoName from "../assets/logo-mask-test.svg"
 import About from '../components/About.astro';
+import NavBar from '../components/Nav.astro';
 
 ---
 
 <Layout>
   <div class="wrapper">
+    
     <About />
       <div class="image-container">
-          <img src={LogoName.src} />
+          <img id="img-anime" src={LogoName.src} />
       </div>
   </div>
 
@@ -44,7 +46,7 @@ import About from '../components/About.astro';
             markers: false,
         },
   })
-        .to("img", {
+        .to("#img-anime", {
             scale: 2,
             z: 350,
             clipPath: "inset(10%)",

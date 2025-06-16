@@ -1,5 +1,6 @@
 ---
 import KeepScrolling from "../assets/keep-scrolling.svg"
+import NavBar from "../components/Nav.astro";
 ---
 
 <!doctype html>
@@ -12,6 +13,7 @@ import KeepScrolling from "../assets/keep-scrolling.svg"
 	<meta name="description" content="Estudio enfocado en el desarrollo web. Creación de páginas web 100% personalizadas.">
   </head>
   <body>
+    <NavBar />
     <slot />
     <div class="w-screen flex justify-center">
       <KeepScrolling

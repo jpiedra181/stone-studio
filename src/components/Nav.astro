@@ -1,0 +1,85 @@
+---
+const currentPath = Astro.url.pathname;
+
+// Ruta a tus imágenes
+import Logo from '../assets/zero-sugar-logo.svg';
+import OpenMenu from '../assets/menu_icon.svg';
+import CloseMenu from '../assets/close-menu-icon.svg';
+---
+
+<nav class="bg-black text-white shadow-md fixed w-screen z-50 py-4 px-20">
+  <div class="flex justify-between">
+      <!-- Logo -->
+      <div>
+        <a href="/">
+            <img src={Logo.src} alt="Logo" class="h-14 w-auto" />
+        </a>
+      </div>
+
+      <!-- Menú desktop -->
+      <div class="hidden md:flex items-center gap-8 text-xl">
+        <a href="/" class=" hover:text-[#e2a165] transition"
+          aria-current={currentPath === '/' ? 'page' : undefined}
+        >Home</a>
+        <a href="/nosotros" class=" hover:text-[#e2a165] transition"
+          aria-current={currentPath === '/nosotros' ? 'page' : undefined}
+        >Nosotros</a>
+        <a href="/proyectos" class=" hover:text-[#e2a165] transition"
+          aria-current={currentPath === '/proyectos' ? 'page' : undefined}
+        >Proyectos</a>
+        <a href="/reservar" class=" hover:text-[#e2a165] transition"
+          aria-current={currentPath === '/reservar' ? 'page' : undefined}
+        >Reservar</a>
+
+        <!-- Botón CTA -->
+        <a href="/contactar"
+          class="ml-4 bg-[#e2a165] text-white px-4 py-2 rounded-lg hover:bg-[#856547] transition"
+          aria-current={currentPath === '/contactar' ? 'page' : undefined}
+        >
+          Contactar
+        </a>
+      </div>
+
+      <!-- Botón menú mobile -->
+      <div class="md:hidden flex items-center">
+        <button id="mobile-menu-button" class="focus:outline-none">
+          <img src={OpenMenu.src} alt="Abrir menú" id="open-menu" class="h-8 w-8" />
+          <img src={CloseMenu.src} alt="Cerrar menú" id="close-menu" class="hidden h-8 w-8" />
+        </button>
+      </div>
+  </div>
+
+  <!-- Menú mobile -->
+  <div id="mobile-menu" class="md:hidden hidden text-white h-screen">
+    <div class="flex flex-col justify-start items-center bg-black text-white h-full pt-20">
+        <a href="/" class="block "
+          aria-current={currentPath === '/' ? 'page' : undefined}
+        >Home</a>
+        <a href="/nosotros" class="block "
+          aria-current={currentPath === '/nosotros' ? 'page' : undefined}
+        >Nosotros</a>
+        <a href="/proyectos" class="block "
+          aria-current={currentPath === '/proyectos' ? 'page' : undefined}
+        >Proyectos</a>
+        <a href="/reservar" class="block "
+          aria-current={currentPath === '/reservar' ? 'page' : undefined}
+        >Reservar</a>
+        <a href="/contactar" class="block text-[#e2a165] font-semibold"
+          aria-current={currentPath === '/contactar' ? 'page' : undefined}
+        >Contactar</a>
+    </div>
+  </div>
+
+  <!-- Script para toggle del menú móvil -->
+  <script>
+    const btn = document.getElementById('mobile-menu-button');
+    const openMenu = document.getElementById('open-menu');
+    const closeMenu = document.getElementById('close-menu');
+    btn?.addEventListener('click', () => {
+      const menu = document.getElementById('mobile-menu');
+      menu?.classList.toggle('hidden');
+      openMenu?.classList.toggle('hidden');
+      closeMenu?.classList.toggle('hidden');
+    });
+  </script>
+</nav>
