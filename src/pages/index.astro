@@ -1,13 +1,9 @@
 ---
 import Layout from '../layouts/Layout.astro';
 
-import ImgBackground from "../assets/hero-img-bg.webp"
-import Logo from "../assets/logo-icon.svg"
-import ShortName from "../assets/short-name.svg"
-import MenuIcon from "../assets/menu_icon.svg"
-import LogoName from "../assets/logo-mask-test.svg"
+import Mask from "../assets/img-mask.svg"
+import MobileMask from "../assets/img-mask-mobile.svg"
 import About from '../components/About.astro';
-import NavBar from '../components/Nav.astro';
 import Hero from '../components/Hero.astro';
 
 ---
@@ -17,7 +13,8 @@ import Hero from '../components/Hero.astro';
     <Hero />
     <About />
       <div class="image-container">
-          <img id="img-anime" src={LogoName.src} />
+          <img id="img-anime" src={MobileMask.src} alt="Imagen para mobile" class="block md:hidden"/>
+          <img id="img-anime" src={Mask.src} alt="Imagen para resto dispositivos" class="hidden md:block"/>
       </div>
   </div>
 
@@ -53,6 +50,17 @@ import Hero from '../components/Hero.astro';
             clipPath: "inset(10%)",
             transformOrigin: "center center",
             ease: "Power4.inOut",
+            autoAlpha: 0,
         })
+
+    gsap.to("#hero", {
+    scrollTrigger: {
+      trigger: "#hero",
+      start: "top center",
+      end: "bottom top",
+      scrub: true,
+    },
+    scale: 1
   })
+})
 </script>
