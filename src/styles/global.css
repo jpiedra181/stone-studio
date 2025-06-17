@@ -4,11 +4,13 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: "Radio Canada", sans-serif;
     font-weight: 400;
-    font-size: 34px;
-    font-style: italic;
     overflow-x: hidden;
 }
 
