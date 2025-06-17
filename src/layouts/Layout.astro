@@ -1,5 +1,4 @@
 ---
-import KeepScrolling from "../assets/keep-scrolling.svg"
 import NavBar from "../components/Nav.astro";
 ---
 
@@ -15,11 +14,6 @@ import NavBar from "../components/Nav.astro";
   <body>
     <NavBar />
     <slot />
-    <div class="w-screen flex justify-center">
-      <KeepScrolling
-        class="fixed bottom-3 text-pink-300 drop-shadow-2xl animate-bounce-pulse z-1000"
-      />
-    </div>
   </body>
 </html>
 

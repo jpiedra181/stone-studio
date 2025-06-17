@@ -8,6 +8,8 @@ import Hero from '../components/Hero.astro';
 import Services from '../components/Services.astro';
 import Contactar from '../components/Contactar.astro';
 import Reservas from '../components/Reservas.astro';
+import Proyectos from '../components/Proyectos.astro';
+import Footer from '../components/Footer.astro';
 
 ---
 
@@ -16,8 +18,10 @@ import Reservas from '../components/Reservas.astro';
     <Hero />
     <About />
     <Services />
+    <Proyectos />
     <Reservas />
     <Contactar />
+    <Footer />
       <div class="image-container">
           <img id="img-anime" src={MobileMask.src} alt="Imagen para mobile" class="block md:hidden"/>
           <img id="img-anime" src={Mask.src} alt="Imagen para resto dispositivos" class="hidden md:block"/>
@@ -39,35 +43,16 @@ import Reservas from '../components/Reservas.astro';
 
   gsap.registerPlugin(ScrollTrigger)
 
-  window.addEventListener("load", () => {
-    gsap.timeline({
-        scrollTrigger: {
-            trigger: ".wrapper",
-            start: "top top",
-            end: "+=100%",
-            pin: true,
-            scrub: true,
-            markers: false,
-        },
+  gsap.to("#img-anime", {
+      delay: 0.5,
+      duration: 2.5,
+      scale: 2,
+      z: -10,
+      opacity: 0,
+      clipPath: "inset(10%)",
+      transformOrigin: "center center",
+      ease: "Power4.inOut",
+      autoAlpha: 0,
   })
-        .to("#img-anime", {
-            scale: 2,
-            z: 350,
-            clipPath: "inset(10%)",
-            transformOrigin: "center center",
-            ease: "Power4.inOut",
-            autoAlpha: 0,
-        })
 
-    gsap.to("#hero", {
-    scrollTrigger: {
-      trigger: "#hero",
-      start: "top center",
-      end: "bottom top",
-      scrub: true,
-    },
-    scale: 1,
-    z: 1000
-  })
-})
 </script>

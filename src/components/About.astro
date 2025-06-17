@@ -19,3 +19,23 @@
           Contactar
     </a>
 </section>
+
+<script>
+  import { gsap } from "gsap"
+
+  import { ScrollTrigger } from "gsap/ScrollTrigger"
+
+  gsap.registerPlugin(ScrollTrigger)
+
+  gsap.from("#nosotros", {
+    scrollTrigger: {
+        trigger: "#nosotros",
+        start: "top 60%",
+    },
+      duration: 1,
+      x: -100,
+      opacity: 0,
+      ease: "Power4.inOut",
+  })
+
+</script>

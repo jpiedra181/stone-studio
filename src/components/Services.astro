@@ -1,4 +1,4 @@
-<section id="servicios" class="py-20 px-4 bg-[#e2a165]">
+<section id="servicios" class="py-20 px-4 bg-gradient-to-br from-[#e2a165] to-black">
   <h2 class="text-3xl md:text-4xl font-bold text-center text-white mb-12">
     Servicios
   </h2>
@@ -77,8 +77,29 @@
     <p class="text-lg md:text-xl font-medium text-white">
         Sin problemas. Reserva una cita con nosotros e intentaremos aclararte todas las preguntas que tengas, sin compromiso y sin rodeos.
     </p>
-    <a href="/reservar" class="inline-block mt-6 bg-white text-[#e2a165] px-6 py-3 rounded-lg hover:bg-[#856547] hover:text-white transition">
+    <a href="/reservar" class="inline-block mt-6 bg-white text-[#856547] font-bold text-lg px-6 py-3 rounded-lg cursor-pointer hover:shadow-lg hover:shadow-[#e2a165] transition">
         Reservar una cita
     </a>
 </div>
 </section>
+
+
+<script>
+  import { gsap } from "gsap"
+
+  import { ScrollTrigger } from "gsap/ScrollTrigger"
+
+  gsap.registerPlugin(ScrollTrigger)
+
+  gsap.from("#servicios", {
+    scrollTrigger: {
+        trigger: "#servicios",
+        start: "top 60%",
+    },
+      duration: 1,
+      x: -100,
+      opacity: 0,
+      ease: "Power4.inOut",
+  })
+
+</script>
