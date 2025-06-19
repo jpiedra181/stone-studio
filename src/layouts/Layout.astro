@@ -7,9 +7,59 @@ import NavBar from "../components/Nav.astro";
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <!-- SEO Básico -->
     <title>Zero Sugar Estudio</title>
-	<meta name="description" content="Estudio enfocado en el desarrollo web. Creación de páginas web 100% personalizadas.">
+    <meta
+        name="description"
+        content="Agencia de desarrollo web especializada en la creación de páginas web personalizadas y funcionales. Nos enfocamos en ofrecer soluciones a medida para cada cliente, sin adornos innecesarios."
+    />
+    <meta
+        name="keywords"
+        content="desarrollo web, páginas web personalizadas, soluciones a medida, diseño web, agencia de desarrollo, Zero Sugar Estudio"
+    />
+    <meta name="author" content="Zero Sugar" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://zerosugar.studio/" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Zero Sugar Estudio" />
+    <meta property="og:description" content="Agencia de desarrollo web especializada en la creación de páginas web personalizadas y funcionales. Nos enfocamos en ofrecer soluciones a medida para cada cliente, sin adornos innecesarios." />
+    <meta property="og:image" content="/logo.svg" />
+    <meta property="og:url" content="https://zerosugar.studio/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Zero Sugar Estudio" /> 
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Zero Sugar Estudio" />
+    <meta name="twitter:description" content="Agencia de desarrollo web especializada en la creación de páginas web personalizadas y funcionales. Nos enfocamos en ofrecer soluciones a medida para cada cliente, sin adornos innecesarios." />
+    <meta name="twitter:image" content="/logo.svg" />
+    <meta name="twitter:site" content="@ZeroSugarStudio" />
+    <meta name="twitter:creator" content="@ZeroSugarStudio" />
+
+    <!-- Schema.org JSON-LD -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Zero Sugar Estudio",
+        "url": "https://zerosugar.studio/",
+        "description": "Agencia de desarrollo web especializada en la creación de páginas web personalizadas y funcionales. Nos enfocamos en ofrecer soluciones a medida para cada cliente, sin adornos innecesarios.",
+        "publisher": {
+          "@type": "Organization",
+          "name": "Zero Sugar Estudio",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "/logo.svg"
+          }
+        }
+      }
+    </script>
   </head>
   <body>
     <NavBar />
