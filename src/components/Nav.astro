@@ -24,12 +24,15 @@ import CloseMenu from '../assets/close-menu-icon.svg';
         <a href="#nosotros" class=" hover:text-[#e2a165] transition"
           aria-current={currentPath === '/nosotros' ? 'page' : undefined}
         >Nosotros</a>
-        <a href="#proyectos" class=" hover:text-[#e2a165] transition"
-          aria-current={currentPath === '/proyectos' ? 'page' : undefined}
-        >Proyectos</a>
         <a href="#servicios" class=" hover:text-[#e2a165] transition"
           aria-current={currentPath === '/servicios' ? 'page' : undefined}
         >Servicios</a>
+        <a href="#proyectos" class=" hover:text-[#e2a165] transition"
+          aria-current={currentPath === '/proyectos' ? 'page' : undefined}
+        >Proyectos</a>
+        <a href="#reservar" class=" hover:text-[#e2a165] transition"
+          aria-current={currentPath === '/reservar' ? 'page' : undefined}
+        >Consultoría</a>
 
         <!-- Botón CTA -->
         <a href="#contactar"
@@ -51,20 +54,24 @@ import CloseMenu from '../assets/close-menu-icon.svg';
 
   <!-- Menú mobile -->
   <div id="mobile-menu" class="md:hidden hidden text-white h-screen">
-    <div class="flex flex-col justify-center items-center gap-6 text-lg bg-black text-white h-full">
+    <div class="flex flex-col justify-center items-center gap-6 text-lg bg-black text-white mt-20">
+        <!-- Enlaces del menú -->
         <a href="/" class="block "
           aria-current={currentPath === '/' ? 'page' : undefined}
         >Home</a>
         <a href="#nosotros" class="block "
           aria-current={currentPath === '/nosotros' ? 'page' : undefined}
         >Nosotros</a>
+        <a href="#servicios" class="block "
+          aria-current={currentPath === '/servicios' ? 'page' : undefined}
+        >Servicios</a>
         <a href="#proyectos" class="block "
           aria-current={currentPath === '/proyectos' ? 'page' : undefined}
         >Proyectos</a>
-        <a href="#servicios" class="block "
+        <a href="#reservar" class="block "
           aria-current={currentPath === '/reservar' ? 'page' : undefined}
-        >Reservar</a>
-        <a href="#contactar" class="block text-[#e2a165] font-semibold"
+        >Consultoría</a>
+        <a href="#contactar" class="block bg-[#e2a165] text-white rounded-2xl font-semibold"
           aria-current={currentPath === '/contactar' ? 'page' : undefined}
         >Contactar</a>
     </div>
@@ -75,11 +82,23 @@ import CloseMenu from '../assets/close-menu-icon.svg';
     const btn = document.getElementById('mobile-menu-button');
     const openMenu = document.getElementById('open-menu');
     const closeMenu = document.getElementById('close-menu');
+    const menu = document.getElementById('mobile-menu');
+
     btn?.addEventListener('click', () => {
       const menu = document.getElementById('mobile-menu');
       menu?.classList.toggle('hidden');
       openMenu?.classList.toggle('hidden');
       closeMenu?.classList.toggle('hidden');
+    });
+
+    // Cerrar el menú al hacer clic en un enlace
+    const links = document.querySelectorAll('#mobile-menu a[href]');
+    links.forEach(link => {
+      link.addEventListener('click', () => {
+        menu?.classList.add('hidden');
+        openMenu?.classList.remove('hidden');
+        closeMenu?.classList.add('hidden');
+      });
     });
   </script>
 </nav>
