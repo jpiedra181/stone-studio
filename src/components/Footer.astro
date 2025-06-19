@@ -1,20 +1,24 @@
-<footer class="bg-black text-white py-12 px-6">
-  <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10 items-start">
+---
+import LinkedinIcon from '../assets/linkedin.svg'
+---
+
+<footer class="bg-black text-white py-12 px-4">
+  <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10 items-center">
     
     <!-- Branding -->
     <div>
-      <h2 class="text-2xl font-bold">Zero Sugar</h2>
-      <p class="mt-2 text-sm">Webs sin edulcorantes, hechas desde cero. Claras, rápidas y a tu medida.</p>
+      <h2 class="text-4xl font-bold">Zero Sugar</h2>
+      <p class="mt-2 text-center">Webs sin edulcorantes, hechas desde cero. Claras, rápidas y a tu medida.</p>
     </div>
 
     <!-- Enlaces rápidos -->
     <div>
       <h3 class="font-semibold mb-3 text-lg">Enlaces</h3>
-      <ul class="space-y-2 text-sm">
+      <ul class="space-y-2 ">
         <li><a href="#nosotros" class="hover:underline">Nosotros</a></li>
         <li><a href="#servicios" class="hover:underline">Servicios</a></li>
         <li><a href="#proyectos" class="hover:underline">Proyectos</a></li>
-        <li><a href="#contacto" class="hover:underline">Contacto</a></li>
+        <li><a href="#contactar" class="hover:underline">Contacto</a></li>
       </ul>
     </div>
 
@@ -22,8 +26,8 @@
     <div>
       <h3 class="font-semibold mb-3 text-lg">Síguenos</h3>
       <div class="flex gap-4">
-        <a href="https://instagram.com" target="_blank" class="hover:opacity-80">
-          <img src="/icons/instagram.svg" alt="Instagram" class="w-6 h-6" />
+        <a href="https://www.linkedin.com/company/zero-sugar/" target="_blank" class="hover:opacity-80">
+          <img src={LinkedinIcon.src} alt="LinkedIn" class="w-6 h-6" />
         </a>
         <!-- Añade más redes aquí si quieres -->
       </div>

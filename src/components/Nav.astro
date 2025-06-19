@@ -24,15 +24,15 @@ import CloseMenu from '../assets/close-menu-icon.svg';
         <a href="#nosotros" class=" hover:text-[#e2a165] transition"
           aria-current={currentPath === '/nosotros' ? 'page' : undefined}
         >Nosotros</a>
-        <a href="/proyectos" class=" hover:text-[#e2a165] transition"
+        <a href="#proyectos" class=" hover:text-[#e2a165] transition"
           aria-current={currentPath === '/proyectos' ? 'page' : undefined}
         >Proyectos</a>
-        <a href="/reservar" class=" hover:text-[#e2a165] transition"
-          aria-current={currentPath === '/reservar' ? 'page' : undefined}
-        >Reservar</a>
+        <a href="#servicios" class=" hover:text-[#e2a165] transition"
+          aria-current={currentPath === '/servicios' ? 'page' : undefined}
+        >Servicios</a>
 
         <!-- Botón CTA -->
-        <a href="/contactar"
+        <a href="#contactar"
           class="ml-4 bg-[#e2a165] text-white px-4 py-2 rounded-lg hover:bg-[#856547] transition"
           aria-current={currentPath === '/contactar' ? 'page' : undefined}
         >
@@ -51,20 +51,20 @@ import CloseMenu from '../assets/close-menu-icon.svg';
 
   <!-- Menú mobile -->
   <div id="mobile-menu" class="md:hidden hidden text-white h-screen">
-    <div class="flex flex-col justify-start items-center bg-black text-white h-full pt-20">
+    <div class="flex flex-col justify-center items-center gap-6 text-lg bg-black text-white h-full">
         <a href="/" class="block "
           aria-current={currentPath === '/' ? 'page' : undefined}
         >Home</a>
-        <a href="/nosotros" class="block "
+        <a href="#nosotros" class="block "
           aria-current={currentPath === '/nosotros' ? 'page' : undefined}
         >Nosotros</a>
-        <a href="/proyectos" class="block "
+        <a href="#proyectos" class="block "
           aria-current={currentPath === '/proyectos' ? 'page' : undefined}
         >Proyectos</a>
-        <a href="/reservar" class="block "
+        <a href="#servicios" class="block "
           aria-current={currentPath === '/reservar' ? 'page' : undefined}
         >Reservar</a>
-        <a href="/contactar" class="block text-[#e2a165] font-semibold"
+        <a href="#contactar" class="block text-[#e2a165] font-semibold"
           aria-current={currentPath === '/contactar' ? 'page' : undefined}
         >Contactar</a>
     </div>
