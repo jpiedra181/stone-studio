@@ -47,12 +47,18 @@ import Footer from '../components/Footer.astro';
       delay: 0.5,
       duration: 2.5,
       scale: 2,
-      z: -10,
       opacity: 0,
       clipPath: "inset(10%)",
       transformOrigin: "center center",
       ease: "Power4.inOut",
       autoAlpha: 0,
+      onComplete: () => {
+        const el = document.querySelector(".image-container");
+        if (el instanceof HTMLElement) {
+          el.style.pointerEvents = "none";
+          el.style.zIndex = "-1";
+        }
+      }
   })
 
 </script>
