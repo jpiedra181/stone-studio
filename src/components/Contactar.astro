@@ -2,72 +2,75 @@
     <!-- <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-white">
     Si prefieres enviarnos un correo
   </h2> -->
-  <h2 class="w-screen text-white text-2xl md:text-4xl font-bold text-center">¿Aún tienes dudas?</h2>
-        <p class="text-lg md:text-xl font-medium text-white">
-            Sin problemas. Envíanos un correo e intentaremos aclararte todas las preguntas que tengas, sin compromiso y sin rodeos.
-        </p>
-    <form action="https://api.web3forms.com/submit" id="form" method="POST" class="max-w-xl mx-auto p-6 border-2 border-gray-100 bg-white shadow-xl rounded-2xl space-y-5">
-      <input type="hidden" name="access_key" value="376d610e-a442-435e-a6f7-94bd26fabe49">
-      <div>
-        <label for="name" class="block text-sm font-medium text-gray-700">Nombre</label>
-        <input
-          type="text"
-          id="name"
-          name="name"
-          placeholder="Tu nombre"
-          required
-          class="mt-1 block w-full rounded-lg border border-gray-300 p-3 shadow-sm focus:border-black focus:ring-black"
-        />
-      </div>
-    
-      <div>
-        <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
-        <input
-          type="email"
-          id="email"
-          name="email"
-          placeholder="tucorreo@ejemplo.com"
-          required
-          class="mt-1 block w-full rounded-lg border border-gray-300 p-3 shadow-sm focus:border-black focus:ring-black"
-        />
-      </div>
-    
-      <div>
-        <label for="service" class="block text-sm font-medium text-gray-700">¿En qué servicio estás interesado?</label>
-        <select
-          id="service"
-          name="service"
-          required
-          class="mt-1 block w-full rounded-lg border border-gray-300 p-3 shadow-sm bg-white focus:border-black focus:ring-black"
-        >
-          <option value="" disabled selected>Selecciona una opción</option>
-          <option value="portfolio">Portfolio</option>
-          <option value="otro">Otro</option>
-        </select>
-      </div>
-    
-      <div>
-        <label for="message" class="block text-sm font-medium text-gray-700">Cuéntanos más</label>
-        <textarea
-          id="message"
-          name="message"
-          rows="5"
-          placeholder="Escribe tu mensaje aquí..."
-          required
-          class="mt-1 block w-full rounded-lg border border-gray-300 p-3 shadow-sm focus:border-black focus:ring-black"
-        ></textarea>
-      </div>
-    
-      <div>
-        <button
-          type="submit"
-          class="w-full bg-[#e2a165] text-white py-3 px-6 rounded-lg font-semibold cursor-pointer hover:shadow-lg transition-colors"
-        >
-          Enviar mensaje
-        </button>
-      </div>
-      <div id="result"></div>
-    </form>
+  <div class="text-center max-w-2xl mx-auto flex flex-col items-center gap-4">
+
+    <h2 class="w-screen text-white text-2xl md:text-4xl font-bold text-center">¿Aún tienes dudas?</h2>
+          <p class="text-lg md:text-xl font-medium text-white">
+              Sin problemas. Envíanos un correo e intentaremos aclararte todas las preguntas que tengas, sin compromiso y sin rodeos.
+          </p>
+      <form action="https://api.web3forms.com/submit" id="form" method="POST" class="max-w-xl mx-auto p-6 border-2 border-gray-100 bg-white shadow-xl rounded-2xl space-y-5">
+        <input type="hidden" name="access_key" value="376d610e-a442-435e-a6f7-94bd26fabe49">
+        <div>
+          <label for="name" class="block text-sm font-medium text-gray-700">Nombre</label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            placeholder="Tu nombre"
+            required
+            class="mt-1 block w-full rounded-lg border border-gray-300 p-3 shadow-sm focus:border-black focus:ring-black"
+          />
+        </div>
+      
+        <div>
+          <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="tucorreo@ejemplo.com"
+            required
+            class="mt-1 block w-full rounded-lg border border-gray-300 p-3 shadow-sm focus:border-black focus:ring-black"
+          />
+        </div>
+      
+        <div>
+          <label for="service" class="block text-sm font-medium text-gray-700">¿En qué servicio estás interesado?</label>
+          <select
+            id="service"
+            name="service"
+            required
+            class="mt-1 block w-full rounded-lg border border-gray-300 p-3 shadow-sm bg-white focus:border-black focus:ring-black"
+          >
+            <option value="" disabled selected>Selecciona una opción</option>
+            <option value="portfolio">Portfolio</option>
+            <option value="otro">Otro</option>
+          </select>
+        </div>
+      
+        <div>
+          <label for="message" class="block text-sm font-medium text-gray-700">Cuéntanos más</label>
+          <textarea
+            id="message"
+            name="message"
+            rows="5"
+            placeholder="Escribe tu mensaje aquí..."
+            required
+            class="mt-1 block w-full rounded-lg border border-gray-300 p-3 shadow-sm focus:border-black focus:ring-black"
+          ></textarea>
+        </div>
+      
+        <div>
+          <button
+            type="submit"
+            class="w-full bg-[#e2a165] text-white py-3 px-6 rounded-lg font-semibold cursor-pointer hover:shadow-lg transition-colors"
+          >
+            Enviar mensaje
+          </button>
+        </div>
+        <div id="result"></div>
+      </form>
+  </div>
 
     <script is:inline>
 const form = document.getElementById('form');
